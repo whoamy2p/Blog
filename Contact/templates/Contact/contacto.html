@@ -1,0 +1,23 @@
+{% extends 'Home/Base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="row">  
+        <!-- seccion de cursos y libros gratis -->
+        <section class="col-12" id="cours-cours">
+            <div id="cours-free" style="border-bottom: none; width: 70%;">
+                <div class="url" style="margin-top: -20px;">
+                    <a href="{% url 'Home' %}">Home</a> <span>/</span> <a href="#">Contact</a>
+                </div>
+                <div class="forms">
+                    <h2>Contactame</h2>
+                    <p>Nos encantaria saber de usted. Complete el siguiente formulario con información sobre su duda o pregunta y me pondré en contacto con usted tan pronto como pueda. Porfavor permitame <span>24h</span>  para responder</p>
+                    <form action="" method="get" id="myform">
+                        {{form}}
+                        <button type="submit" class="btn-form1">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

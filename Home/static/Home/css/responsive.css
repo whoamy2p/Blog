@@ -1,0 +1,176 @@
+
+@media (min-width:1200px) {
+    footer#foot #nav {width: 70%; height: auto; margin: 0 auto;}
+    /* section .container-banner {width: 60%;} */
+    section#foot-section .bg-color {width: 50%; height: auto; margin: 0 auto;}
+}
+
+/* laptop */
+@media (min-width: 992px) and (max-width: 1199px) {
+    article.box-cours .container-cours {height: 580px;}
+    .container-content-post .col-3 {width: 30%;}
+    .container-content-post .icon-style {
+        width: 70%;
+        height: 50px;
+    }
+
+    footer#foot #nav {width: 80%; height: auto; margin: 0 auto;}
+    section#foot-section .bg-color{width: 60%; height: auto; margin: 0 auto;}
+}
+/* tablet */
+@media (min-width: 768px) and (max-width: 991px){
+    section#banner {height: 350px; border: 2px solid red;}
+    section #title-banner:first-child {
+        font-size: 2.5em; 
+        margin: 0px;
+        padding: 0px;
+    }
+    #content-banner {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 6px 0;
+    }
+
+    button.btn-banner {
+        width: 25%;
+        height: 40px;
+        font-size: 1.2em;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+
+    section > div.ctn {margin-top: -85px;}
+    .container-main {width: 85%;}
+
+    .container-content-post .col-3 {width: 30%; height: auto; margin: 0 auto;}
+    
+    .container-content-post .icon-style {
+        width: 30%;
+        height: 80px;
+        margin: 0 auto;
+    }
+
+    .col-9 {width: 100%;}
+    aside.col-3 {
+        width: 100%; 
+        padding: 20px;
+    }
+
+    #cours-cours article {
+        width: 33%;
+    }
+    article.box-cours .container-cours {height: 550px;}
+    footer#foot #nav {width: 90%; height: auto; margin: 0 auto;}
+
+    section#foot-section .bg-color{width: 70%; height: auto; margin: 0 auto;}
+    
+}
+/* telefono grande */
+@media (min-width: 576px) and (max-width: 767px){
+    section#banner {height: 280px; border: 2px solid red;}
+    section .container-banner {width: 90%;}
+    section #title-banner:first-child {
+        font-size: 2.2em;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #content-banner {
+        font-size: 1em;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 6px 0;
+    }
+
+    button.btn-banner {
+        width: 22%;
+        height: 38px;
+        font-size: 1em;
+        margin-left: 39%;
+        margin-right: 39%;
+    }
+
+    section > div.ctn {margin-top: -65px;}
+    .container-main {width: 95%;}
+
+    .main-p h1:first-child {width: 70%; font-size: 2.1em;}
+
+    #cours-cours .col-9 {width: 100%;}
+
+    .container-content-post .col-3 {width: 30%; height: auto; margin: 0 auto;}
+    
+    .container-content-post .icon-style {
+        width: 40%;
+        height: 80px;
+        margin: 0 auto;
+    }
+    aside.col-3 {
+        width: 100%; 
+        padding: 20px;
+    }
+
+    #cours-cours article {width: 50%;}
+    section#box-srv .col-6 {width: 100%;}
+    footer#foot #nav {width: 100%;}
+
+    footer#foot .margin li.link-foot {width: 30%; border-left: 2px solid black;}
+    footer#foot .margin li.link-foot .a-foot {width: 50%;}
+    footer#foot li#br-left {border-left: none;}
+
+}
+
+
+/* telefono pequeño */
+@media (max-width: 575px) {
+    section#banner {height: 280px; border: 2px solid red;}
+    section .container-banner {width: 90%;}
+    section #title-banner:first-child {
+        font-size: 1.9em;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #content-banner {
+        font-size: 1.2em;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        padding: 6px 0;
+    }
+
+    button.btn-banner {
+        width: 28%;
+        height: 38px;
+        font-size: 1em;
+        margin-left: 36%;
+        margin-right: 36%;
+    }
+
+    section > div.ctn {margin-top: -65px;}
+    .container-main {width: 95%;}
+
+    .main-p h1:first-child {width: 90%; font-size: 1.9em;}
+    
+
+    #cours-cours .col-9 {width: 100%;}
+    aside.col-3 {
+        width: 100%; 
+        padding: 20px;
+    }
+
+    #cours-cours article {width: 100%;}
+
+    article.box-cours .container-cours {height: 440px;}
+    section#box-srv .col-6 {
+        width: 100%;
+    }
+
+    footer #nav-foot {display: none;}
+    .border-icon {
+        padding: 20% 12%;
+    }
+    svg {
+        width: 32px;
+        height: 32px;
+        margin: auto;
+    }
+}

@@ -1,0 +1,50 @@
+/* seccion de titulo curso */
+
+.container-subctg {
+    width: 90%;
+    height: 80px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.container-subctg .title-cours {
+    display: block;
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2em;
+    text-transform: capitalize;
+    text-shadow: 2px -4px 3px turquoise;
+    padding: 10px;
+    border-bottom: 1.5px dashed blue;
+}
+
+#btn-number {padding: 15px 25px;}
+
+#btn-number .container-btn {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    padding: 2px;
+}
+
+#btn-number .first-btn, .finally-btn {
+    width: 95px;
+    height: 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(35, 111, 121);
+    /* poner la manito */
+}
+
+#btn-number #number {
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: rgb(35, 111, 121);
+    color: white;
+}
