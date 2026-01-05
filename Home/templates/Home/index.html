@@ -38,7 +38,11 @@
                     <article class="col-4 box-cours" id="">
                         <a href="#">
                             <div class="col-12 container-cours">
+                                <div class="featured-badge" title="Destacado">
+                                    <i class="fas fa-star"></i>
+                                </div>
                                 <div class="img-port">
+
                                     <img src="{{cours.image_cours.url}}" alt="cours">
                                 </div>
                                 <div class="content-port">
@@ -54,10 +58,21 @@
                                     {% endfor %}
                                     <h2 class="title-cours" style="margin: 20px 0;"><a
                                             href="#">{{cours.title_cours}}</a></h2>
+                                    <p class="desc-cours">{{cours.description_cours|truncatewords:20}}</p>
+                                    <div class="card-footer">
+                                        <div class="rating">
+                                            {% for i in "12345" %}
+                                            <i
+                                                class="fas fa-star {% if forloop.counter <= cours.rating %}gold{% endif %}"></i>
+                                            {% endfor %}
+                                        </div>
+                                        <a href="#" class="btn-read-more">Leer más</a>
+                                    </div>
                                 </div>
                             </div>
                         </a>
                     </article>
+
                     {% endfor %}
 
                 </div>

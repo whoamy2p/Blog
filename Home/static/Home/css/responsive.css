@@ -20,20 +20,18 @@
     }
 
     section#banner {
-        height: 400px;
+        height: 350px;
     }
 
     section #title-banner:first-child {
-        font-size: 2.8rem;
-    }
-
-    .container-main {
-        padding: 0 20px;
+        font-size: 2.2rem;
     }
 
     /* Layout Adjustments */
+    #cours-free {
+        flex-direction: column;
+    }
 
-    /* Force courses to utilize grid or flex wrapping properly */
     #cours-cours .col-9 {
         flex: 0 0 100%;
         max-width: 100%;
@@ -42,14 +40,19 @@
     aside.col-3 {
         flex: 0 0 100%;
         max-width: 100%;
-        padding-left: 0;
-        margin-top: 30px;
+        padding: 0 15px;
+        margin-top: 40px;
     }
 
-    /* Footer adjustments */
-    footer#foot .margin ul {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .col-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Box Services */
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 
@@ -69,80 +72,120 @@
 
     /* Header & Nav */
     .img-header {
-        height: 120px;
+        height: 100px;
     }
 
     .container .logo {
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
-    #navegation>div {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
+    #navegation>div.nav-container {
+        flex-direction: row;
+        height: 70px;
+        padding: 0 15px;
+        justify-content: space-between;
+    }
+
+    #mobile-menu-toggle {
+        display: block;
+        order: 1;
+    }
+
+    #navegation .nav-menu-wrapper {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary);
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+    }
+
+    #navegation .nav-menu-wrapper.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
     }
 
     #navegation ul {
         flex-direction: column;
         width: 100%;
+        gap: 0;
     }
 
     .list-link {
         width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: left;
     }
 
     .list-link a#nav-link {
         width: 100%;
         height: 50px;
-        justify-content: center;
+        padding: 0 20px;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
+
 
     /* Banner */
     section#banner {
-        height: 350px;
-        text-align: center;
+        height: 300px;
     }
 
     section #title-banner:first-child {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     #content-banner {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
     }
 
     button.btn-banner {
-        width: 80%;
-        padding: 12px 0;
+        padding: 10px 25px;
+        font-size: 1rem;
     }
 
     /* Main Content */
     section>div.ctn {
-        margin-top: -40px;
-        border-radius: 20px 20px 0 0;
+        margin-top: -30px;
+        padding-top: 30px;
     }
 
     .main-p h1:first-child {
-        font-size: 1.8rem;
-        width: 100%;
-        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    /* Pagination */
+    .pagination-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .page-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
     }
 
     /* Footer */
-    footer#foot .margin ul {
+    .footer-grid {
         flex-direction: column;
+        gap: 30px;
         text-align: center;
     }
 
-    footer#foot .a-foot {
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .footer-col-title::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .box-service {
-        margin: 10px 0;
-        width: 100%;
+    .footer-social-icons {
+        justify-content: center;
+    }
+
+    footer#foot .a-foot {
+        padding: 10px 0;
     }
 }

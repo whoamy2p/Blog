@@ -8,7 +8,8 @@ SUBCTG_COURS = Sub_Category.objects.filter (category__name_category__startswith 
 SUBCTG_BOOKS = Sub_Category.objects.filter (category__name_category__startswith = 'Books')
 
 def home (request):
-    cours = Course.objects.all ().order_by ('-id')[:9]
+    cours = Course.objects.all ().order_by ('-id')[:3]
+
 
     return render (request, 'Home/index.html', {'cours_all':cours, 'subctg_cours': SUBCTG_COURS, 'subctg_books': SUBCTG_BOOKS})
 

@@ -48,6 +48,7 @@
                         <a href="#">
                             <h2>{{POST.title_book}}</h2>
                         </a>
+                        <p class="sidebar-desc">{{POST.description_book|truncatewords:10}}</p>
                         <p>{{POST.created}}</p>
                     </div>
                     {% endfor %}

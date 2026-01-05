@@ -1,5 +1,5 @@
-from turtle import title, width
 from django.db import models
+
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -60,6 +60,7 @@ class Course (models.Model):
     image_cours = models.ImageField (upload_to = 'learning')
     subcategory = models.ManyToManyField (Sub_Category)
     link_cours = models.URLField ()
+    rating = models.IntegerField(default=5)
     idiom_cours = models.CharField (max_length=20, blank=True, null=True)
     # auth_admin = models.ForeignKey (User, on_delete=models.CASCADE)
 
@@ -94,6 +95,7 @@ class Book (models.Model):
     data_sheet = models.OneToOneField (Data_sheet, on_delete=models.CASCADE)
     image_book = models.ImageField (upload_to = 'learning')
     link_book = models.URLField ()
+    rating = models.IntegerField(default=5)
 
     subcategory = models.ForeignKey (Sub_Category, on_delete=models.CASCADE)
 

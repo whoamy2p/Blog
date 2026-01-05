@@ -32,8 +32,11 @@
         </div>
     </div>
     <nav class="row" id="navegation">
-        <div style="width: 80%; height: auto; margin: 0 auto;">
-            <div class="col-8">
+        <div class="nav-container">
+            <button id="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="col-8 nav-menu-wrapper" id="nav-menu">
                 <ul class="col-12">
                     <li class="list-link" role="listitem"><a href="{% url 'Home' %}" id="nav-link" role="link">Home</a>
                     </li>
@@ -165,10 +168,31 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <p id="text-foot">whoamy2p &copy; 2022. Todos los derechos reservados</p>
+                <p id="text-foot">Isaias Cesar Quintana Errazabal &copy; 2022. Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('mobile-menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function () {
+                    navMenu.classList.toggle('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (navMenu.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
