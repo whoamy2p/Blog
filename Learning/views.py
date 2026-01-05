@@ -1,5 +1,5 @@
-from email import message
 from django.shortcuts import render, redirect
+from django.db.models import Q
 from .models import Course, Sub_Category, Book
 from math import ceil
 
@@ -104,3 +104,35 @@ def subcategory_books (request, name_subctg):
         book = 'never'
 
     return render (request, 'Learning/books/subcategory_books.html', {'books_all': book, 'subctg_cours': SUBCTG_COURS, 'subctg_books': SUBCTG_BOOKS, 'name_subctg': name_subctg, 'range': range(cantidad_grupos), 'post': post_news})
+
+def search(request):
+    query = request.GET.get('q')
+    results_cours = []
+    results_books = []
+    
+    if query:
+        # Search in Courses
+        results_cours = Course.objects.filter(
+            Q(title_cours__icontains=query) | 
+            Q(description_cours__icontains=query) |
+            Q(subcategory__name_subcategory__icontains=query) |
+            Q(author_cours__name_author__icontains=query)
+        ).distinct()
+        
+        # Search in Books
+        results_books = Book.objects.filter(
+            Q(title_book__icontains=query) | 
+            Q(description_book__icontains=query) |
+            Q(subcategory__name_subcategory__icontains=query) |
+            Q(author_book__name_author__icontains=query) |
+            Q(data_sheet__editor__icontains=query)
+        ).distinct()
+
+    context = {
+        'query': query,
+        'results_cours': results_cours,
+        'results_books': results_books,
+        'subctg_cours': SUBCTG_COURS,
+        'subctg_books': SUBCTG_BOOKS,
+    }
+    return render(request, 'Learning/search.html', context)

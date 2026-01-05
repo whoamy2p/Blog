@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Home/static/Home/img/portada_github.png" alt="Coffee Organic Life" width="100%">
+</p>
+
 # Blog - Plataforma Web Django
 
 Un proyecto Django completo que integra un blog educativo con módulos de aprendizaje, contacto y una página de inicio.

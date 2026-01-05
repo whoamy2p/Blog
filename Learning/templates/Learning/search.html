@@ -1,0 +1,89 @@
+{% extends 'Home/Base/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="row">
+    <section class="col-12" id="cours-cours">
+        <div class="container-subctg" style="margin-top: 40px; margin-bottom: 20px;">
+            <h1 class="title-cours">Resultados para: "{{ query }}"</h1>
+        </div>
+
+        <div id="cours-free" style="border-bottom: none;">
+            <div class="col-12">
+                <div class="container-main">
+
+                    {% if not results_cours and not results_books %}
+                    <div class="no-results" style="padding: 100px 20px; text-align: center;">
+                        <h2 style="color: var(--primary); margin-bottom: 20px;">No se encontraron resultados</h2>
+                        <p style="color: #666;">Intenta con otras palabras clave como "Udemy", "Python", o el nombre de
+                            un autor.</p>
+                        <a href="{% url 'Home' %}" class="btn-banner"
+                            style="display: inline-block; margin-top: 30px; text-decoration: none;">Volver al Inicio</a>
+                    </div>
+                    {% endif %}
+
+                    {% if results_cours %}
+                    <div class="search-section" style="margin-bottom: 50px;">
+                        <h2 id="title-post" style="margin-bottom: 30px; display: block;">Cursos Encontrados</h2>
+                        <div class="row" style="margin-left: -15px; margin-right: -15px;">
+                            {% for cours in results_cours %}
+                            <article class="col-4 box-cours" style="margin-bottom: 30px;">
+                                <a href="{{ cours.link_cours }}" target="_blank">
+                                    <div class="container-cours">
+                                        <div class="img-port">
+                                            <img src="{{ cours.image_cours.url }}" alt="{{ cours.title_cours }}">
+                                        </div>
+                                        <div class="content-port">
+                                            <div class="ctg-cours">
+                                                <a href="#">Curso</a> <span>/</span>
+                                                {% for subctg in cours.subcategory.all %}
+                                                <a href="#">{{ subctg.name_subcategory }}</a>
+                                                {% endfor %}
+                                            </div>
+                                            {% for author in cours.author_cours.all %}
+                                            <h1 class="author-cours"><span>{{ author.name_author }}</span></h1>
+                                            {% endfor %}
+                                            <h2 class="title-cours" style="margin: 15px 0;">{{ cours.title_cours }}</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if results_books %}
+                    <div class="search-section" style="margin-bottom: 50px;">
+                        <h2 id="title-post" style="margin-bottom: 30px; display: block;">Libros Encontrados</h2>
+                        <div class="row" style="margin-left: -15px; margin-right: -15px;">
+                            {% for book in results_books %}
+                            <article class="col-4 box-cours" style="margin-bottom: 30px;">
+                                <a href="{{ book.link_book }}" target="_blank">
+                                    <div class="container-cours">
+                                        <div class="img-port">
+                                            <img src="{{ book.image_book.url }}" alt="{{ book.title_book }}">
+                                        </div>
+                                        <div class="content-port">
+                                            <div class="ctg-cours">
+                                                <a href="#">Libro</a> <span>/</span>
+                                                <a href="#">{{ book.subcategory.name_subcategory }}</a>
+                                            </div>
+                                            <h1 class="author-cours"><span>{{ book.author_book.name_author }}</span>
+                                            </h1>
+                                            <h2 class="title-cours" style="margin: 15px 0;">{{ book.title_book }}</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

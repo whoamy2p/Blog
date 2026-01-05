@@ -2,22 +2,28 @@
 {% load static %}
 
 {% block content %}
-    <main class="row">  
-        <!-- seccion de cursos y libros gratis -->
-        <section class="col-12" id="cours-cours">
-            <div id="cours-free" style="border-bottom: none; width: 70%;">
-                <div class="url" style="margin-top: -20px;">
+<main class="row">
+    <section class="col-12" id="contact-section">
+        <div class="container-main">
+            <div id="contact-layout">
+                <div class="url">
                     <a href="{% url 'Home' %}">Home</a> <span>/</span> <a href="#">Contact</a>
                 </div>
                 <div class="forms">
-                    <h2>Contactame</h2>
-                    <p>Nos encantaria saber de usted. Complete el siguiente formulario con información sobre su duda o pregunta y me pondré en contacto con usted tan pronto como pueda. Porfavor permitame <span>24h</span>  para responder</p>
+                    <h2>Contáctame</h2>
+                    <p>Nos encantaría saber de usted. Complete el siguiente formulario con información sobre su duda o
+                        pregunta y me pondré en contacto con usted tan pronto como pueda. Por favor permítame
+                        <span>24h</span> para responder
+                    </p>
                     <form action="" method="get" id="myform">
                         {{form}}
-                        <button type="submit" class="btn-form1">Send</button>
+                        <div class="form-footer">
+                            <button type="submit" class="btn-form1">Enviar Mensaje</button>
+                        </div>
                     </form>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 {% endblock %}

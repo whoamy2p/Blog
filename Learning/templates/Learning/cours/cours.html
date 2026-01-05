@@ -2,91 +2,107 @@
 {% load static %}
 
 {% block content %}
-    <main class="row">  
-        <section class="col-12" id="cours-cours">
-            <div id="cours-free" style="border-bottom: none;">
-                <div class="col-9">
-                    <div class="col-12 conatiner-cours">
-                        {% for cours in cours_all %}
-                        <article class="col-4 box-cours" id="">
-                            <a href="#">
-                                <div class="col-12 container-cours"> 
-                                    <div class="img-port">
-                                        <img src="{{cours.image_cours.url}}" alt="cours">
-                                    </div>
-                                    <div class="content-port">
-                                        <hr>
-                                        <div class="ctg-cours">
-                                            <a href="#">Curso</a> <span>/</span> 
-                                            {% for subctg in cours.subcategory.all %}
-                                            <a href="#">{{subctg.name_subcategory}}</a>
-                                            {% endfor %}
-                                        </div>
-                                        {% for author in cours.author_cours.all %}
-                                        <h1 class="author-cours"><span>{{author.name_author}}</span></h1>
-                                        {% endfor %}
-                                        <h2 class="title-cours" style="margin: 20px 0;"><a href="#">{{cours.title_cours}}</a></h2>
-                                    </div>
+<main class="row">
+    <section class="col-12" id="cours-cours">
+        <div id="cours-free" style="border-bottom: none;">
+            <div class="col-9">
+                <div class="col-12 conatiner-cours">
+                    {% for cours in cours_all %}
+                    <article class="col-4 box-cours" id="">
+                        <a href="#">
+                            <div class="col-12 container-cours">
+                                <div class="img-port">
+                                    <img src="{{cours.image_cours.url}}" alt="cours">
                                 </div>
-                            </a>
-                        </article>
-                        {% endfor %}
-                        
-                    </div>
-                </div>
+                                <div class="content-port">
+                                    <hr>
+                                    <div class="ctg-cours">
+                                        <a href="#">Curso</a> <span>/</span>
+                                        {% for subctg in cours.subcategory.all %}
+                                        <a href="#">{{subctg.name_subcategory}}</a>
+                                        {% endfor %}
+                                    </div>
+                                    {% for author in cours.author_cours.all %}
+                                    <h1 class="author-cours"><span>{{author.name_author}}</span></h1>
+                                    {% endfor %}
+                                    <h2 class="title-cours" style="margin: 20px 0;"><a
+                                            href="#">{{cours.title_cours}}</a></h2>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    {% endfor %}
 
-                <aside class="col-3">
-                    <div class="col-12 container-box">
-                        <h1 id="title-post">Post Recientes</h1>
-                        {% for POST in post %}
-                        <div class="col-12 container-content-post" style="border-bottom: 2px solid rgb(172, 164, 164); margin-top: 25px;">
-                            <a href="#"><h2>{{ POST.title_cours }}</h2></a>
-                            <p>{{ POST.created }}</p>
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <div class="col-12 container-box">
-                        <h1 id="title-post" style="margin-top: 35px;">Sigueme ...</h1>
-                        <div class="col-12 container-content-post" style=" margin-top: 25px;">
-                            <div class="col-3 icon-red">
-                                <a href="#"><div class="icon-style" id="fb"></div></a> 
-                            </div>
-                            <div class="col-3 icon-red">
-                                <a href="#"><div class="icon-style" id="tw"></div></a>
-                            </div>
-                            <div class="col-3 icon-red">
-                                <a href="#"><div class="icon-style" id="ig"></div></a>
-                            </div>
-                            <div class="col-3 icon-red">
-                                <a href="#"><div class="icon-style" id="wa"></div></a>
-                            </div>
-                            <div class="col-3 icon-red">
-                                <a href="#"><div class="icon-style" id="tg"></div></a>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-            
-            <!-- seccion de botones de cursos -->
-            <div class="container-subctg" id="btn-number">
-                <div class="container-btn">
-                    <button class="col-1 first-btn"><a href="{% url 'Cursos' %}"><< Inicio</a></button>
-                        <div class="col-10">
-                            <center>
-                                <!-- Solucionar aqui-->
-                               {% for num in range %}
-                                    {% if num != 0 %}
-                                        <button type="button" id="number"><span><a href="{% url 'Cursos' %}?p={{num}}" style="color: white;">{{num}}</a></span></button>
-                                    {% endif %}
-                                {% endfor %}
-                            </center>
-                            
-                        </div>
-                    <button class="col-1 finally-btn">Final >></button>
                 </div>
             </div>
-            <!-- fin de esta seccion -->
-        </section>
-    </main>
+
+            <aside class="col-3">
+                <div class="col-12 container-box">
+                    <h1 id="title-post">Post Recientes</h1>
+                    {% for POST in post %}
+                    <div class="col-12 container-content-post"
+                        style="border-bottom: 2px solid rgb(172, 164, 164); margin-top: 25px;">
+                        <a href="#">
+                            <h2>{{ POST.title_cours }}</h2>
+                        </a>
+                        <p>{{ POST.created }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-12 container-box">
+                    <h1 id="title-post">Sígueme</h1>
+                    <div class="sidebar-social-grid">
+                        <div class="social-item">
+                            <a href="#">
+                                <div class="icon-style" id="fb"></div>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="#">
+                                <div class="icon-style" id="tw"></div>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="#">
+                                <div class="icon-style" id="ig"></div>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="#">
+                                <div class="icon-style" id="wa"></div>
+                            </a>
+                        </div>
+                        <div class="social-item">
+                            <a href="#">
+                                <div class="icon-style" id="tg"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- seccion de botones de cursos -->
+        <div class="container-subctg" id="btn-number">
+            <div class="container-btn">
+                <button class="col-1 first-btn"><a href="{% url 'Cursos' %}">
+                        << Inicio</a></button>
+                <div class="col-10">
+                    <center>
+                        <!-- Solucionar aqui-->
+                        {% for num in range %}
+                        {% if num != 0 %}
+                        <button type="button" id="number"><span><a href="{% url 'Cursos' %}?p={{num}}"
+                                    style="color: white;">{{num}}</a></span></button>
+                        {% endif %}
+                        {% endfor %}
+                    </center>
+
+                </div>
+                <button class="col-1 finally-btn">Final >></button>
+            </div>
+        </div>
+        <!-- fin de esta seccion -->
+    </section>
+</main>
 {% endblock %}

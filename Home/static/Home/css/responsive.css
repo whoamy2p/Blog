@@ -1,176 +1,148 @@
+/* Responsive Design */
 
-@media (min-width:1200px) {
-    footer#foot #nav {width: 70%; height: auto; margin: 0 auto;}
-    /* section .container-banner {width: 60%;} */
-    section#foot-section .bg-color {width: 50%; height: auto; margin: 0 auto;}
+/* Large screens & Laptops (min-width: 992px) */
+@media (min-width: 992px) {
+    .container {
+        padding: 0 40px;
+    }
 }
 
-/* laptop */
-@media (min-width: 992px) and (max-width: 1199px) {
-    article.box-cours .container-cours {height: 580px;}
-    .container-content-post .col-3 {width: 30%;}
-    .container-content-post .icon-style {
-        width: 70%;
-        height: 50px;
+/* Tablets (min-width: 768px) and (max-width: 991px) */
+@media (max-width: 991px) {
+    #navegation>div {
+        width: 100% !important;
+        padding: 0 20px;
     }
 
-    footer#foot #nav {width: 80%; height: auto; margin: 0 auto;}
-    section#foot-section .bg-color{width: 60%; height: auto; margin: 0 auto;}
-}
-/* tablet */
-@media (min-width: 768px) and (max-width: 991px){
-    section#banner {height: 350px; border: 2px solid red;}
+    #navegation .col-4 {
+        display: none;
+        /* Hide search on tablets */
+    }
+
+    section#banner {
+        height: 400px;
+    }
+
     section #title-banner:first-child {
-        font-size: 2.5em; 
-        margin: 0px;
-        padding: 0px;
-    }
-    #content-banner {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 6px 0;
+        font-size: 2.8rem;
     }
 
-    button.btn-banner {
-        width: 25%;
-        height: 40px;
-        font-size: 1.2em;
-        margin-left: 40%;
-        margin-right: 40%;
+    .container-main {
+        padding: 0 20px;
     }
 
-    section > div.ctn {margin-top: -85px;}
-    .container-main {width: 85%;}
+    /* Layout Adjustments */
 
-    .container-content-post .col-3 {width: 30%; height: auto; margin: 0 auto;}
-    
-    .container-content-post .icon-style {
-        width: 30%;
-        height: 80px;
-        margin: 0 auto;
+    /* Force courses to utilize grid or flex wrapping properly */
+    #cours-cours .col-9 {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 
-    .col-9 {width: 100%;}
     aside.col-3 {
-        width: 100%; 
-        padding: 20px;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+        margin-top: 30px;
     }
 
-    #cours-cours article {
-        width: 33%;
+    /* Footer adjustments */
+    footer#foot .margin ul {
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    article.box-cours .container-cours {height: 550px;}
-    footer#foot #nav {width: 90%; height: auto; margin: 0 auto;}
-
-    section#foot-section .bg-color{width: 70%; height: auto; margin: 0 auto;}
-    
-}
-/* telefono grande */
-@media (min-width: 576px) and (max-width: 767px){
-    section#banner {height: 280px; border: 2px solid red;}
-    section .container-banner {width: 90%;}
-    section #title-banner:first-child {
-        font-size: 2.2em;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    #content-banner {
-        font-size: 1em;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        padding: 6px 0;
-    }
-
-    button.btn-banner {
-        width: 22%;
-        height: 38px;
-        font-size: 1em;
-        margin-left: 39%;
-        margin-right: 39%;
-    }
-
-    section > div.ctn {margin-top: -65px;}
-    .container-main {width: 95%;}
-
-    .main-p h1:first-child {width: 70%; font-size: 2.1em;}
-
-    #cours-cours .col-9 {width: 100%;}
-
-    .container-content-post .col-3 {width: 30%; height: auto; margin: 0 auto;}
-    
-    .container-content-post .icon-style {
-        width: 40%;
-        height: 80px;
-        margin: 0 auto;
-    }
-    aside.col-3 {
-        width: 100%; 
-        padding: 20px;
-    }
-
-    #cours-cours article {width: 50%;}
-    section#box-srv .col-6 {width: 100%;}
-    footer#foot #nav {width: 100%;}
-
-    footer#foot .margin li.link-foot {width: 30%; border-left: 2px solid black;}
-    footer#foot .margin li.link-foot .a-foot {width: 50%;}
-    footer#foot li#br-left {border-left: none;}
-
 }
 
-
-/* telefono pequeño */
-@media (max-width: 575px) {
-    section#banner {height: 280px; border: 2px solid red;}
-    section .container-banner {width: 90%;}
-    section #title-banner:first-child {
-        font-size: 1.9em;
-        margin: 0px;
-        padding: 0px;
+/* Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+    .row {
+        flex-direction: column;
     }
 
-    #content-banner {
-        font-size: 1.2em;
-        margin-top: 8px;
-        margin-bottom: 8px;
-        padding: 6px 0;
+    /* CRITICAL: Override all specific column widths */
+    [class*='col-'] {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding: 0 10px;
     }
 
-    button.btn-banner {
-        width: 28%;
-        height: 38px;
-        font-size: 1em;
-        margin-left: 36%;
-        margin-right: 36%;
+    /* Header & Nav */
+    .img-header {
+        height: 120px;
     }
 
-    section > div.ctn {margin-top: -65px;}
-    .container-main {width: 95%;}
-
-    .main-p h1:first-child {width: 90%; font-size: 1.9em;}
-    
-
-    #cours-cours .col-9 {width: 100%;}
-    aside.col-3 {
-        width: 100%; 
-        padding: 20px;
+    .container .logo {
+        margin-top: 20px;
     }
 
-    #cours-cours article {width: 100%;}
+    #navegation>div {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
 
-    article.box-cours .container-cours {height: 440px;}
-    section#box-srv .col-6 {
+    #navegation ul {
+        flex-direction: column;
         width: 100%;
     }
 
-    footer #nav-foot {display: none;}
-    .border-icon {
-        padding: 20% 12%;
+    .list-link {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
-    svg {
-        width: 32px;
-        height: 32px;
-        margin: auto;
+
+    .list-link a#nav-link {
+        width: 100%;
+        height: 50px;
+        justify-content: center;
+    }
+
+    /* Banner */
+    section#banner {
+        height: 350px;
+        text-align: center;
+    }
+
+    section #title-banner:first-child {
+        font-size: 2rem;
+    }
+
+    #content-banner {
+        font-size: 1rem;
+    }
+
+    button.btn-banner {
+        width: 80%;
+        padding: 12px 0;
+    }
+
+    /* Main Content */
+    section>div.ctn {
+        margin-top: -40px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .main-p h1:first-child {
+        font-size: 1.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Footer */
+    footer#foot .margin ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer#foot .a-foot {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .box-service {
+        margin: 10px 0;
+        width: 100%;
     }
 }

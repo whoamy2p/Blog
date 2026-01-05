@@ -4,7 +4,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path ('', views.home, name="Home")
+    path ('', views.home, name="Home"),
+    path ('noticias/', views.news_list, name="Noticias"),
 ]
 
 if settings.DEBUG:
